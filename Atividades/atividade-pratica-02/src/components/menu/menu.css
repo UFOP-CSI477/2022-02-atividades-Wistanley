@@ -1,0 +1,22 @@
+.containerMenu h2 {
+    font-size: 30px;
+    background-color: rgb(140, 201, 255);
+    border-radius: 10px;
+}
+
+.containerMenu ul li{
+    font-size: 20px;
+    list-style: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: rgb(207, 233, 255);
+    margin: 5px;
+    border-radius: 10px;
+    align-items: center;
+}
+
+.containerMenu ul :hover{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: rgb(189, 224, 255);
+}
