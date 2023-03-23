@@ -6,6 +6,8 @@
 
 <!-- Descrever um resumo sobre o trabalho. -->
 
+Aplicação para controle de serviços e cotações
+
 ### Resumo
 
   (Apresentar um breve resumo sobre o seu trabalho, indicando o contexto e as principais funcionalidades.)
@@ -13,7 +15,11 @@
 <!-- Apresentar o tema. -->
 ### 1. Tema
 
-  O trabalho final tem como tema o desenvolvimento de ...
+  A aplicação será para controlar o recebimento de cotações recebidas por uma empresa de Usinagem de seus clientes. O cliente terá uma área para enviar cotações, que serão recebidas pela empresa de usinagem, que também terá uma área para visualização dessas cotações.
+
+  Na área do cliente, ele poderá solicitar novas cotações, ver um histórico de cotações, aprovar ou reprovar cotações já realizadas, ver o andamento dos serviços aprovados e comunicar com a empresa de usinagem.
+
+  Na área da empresa de Usinagem, poderá ser visto cotações recebidas, responder as cotações, incluir feedback de serviços em andamento e entrar em contato com o cliente.
 
 <!-- Descrever e limitar o escopo da aplicação. -->
 ### 2. Escopo
