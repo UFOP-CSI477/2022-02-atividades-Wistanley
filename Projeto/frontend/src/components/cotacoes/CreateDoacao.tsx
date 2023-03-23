@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import api from "../../services/api";
 import { Link, useNavigate } from "react-router-dom";
-import { PessoaInterface } from "../pessoas/ListPessoas";
-import { LocalInterface } from "../locais/ListLocais";
+import { PessoaInterface } from "../usuarios/ListUsuarios";
+import { LocalInterface } from "../servicos/ListLocais";
 
 const CreateDoacao = () => {
     

@@ -1,35 +1,16 @@
 import { useEffect, useState } from "react";
 import api from "../../services/api";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { CidadeInterface } from "../cidades/ListCidades";
-import { TipoInterface } from "../tipos_sanguineos/ListTipos";
 
-const UpdatePessoa = () => {
+const UpdateUsuario = () => {
     
     const navigate = useNavigate();
 
     const [nome, setNome] = useState('');
     const [cidadeId, setCidadeId] = useState(0);
     const [tipoId, setTipoId] = useState(0);
-
-    const [ cidades, setCidades ] = useState<CidadeInterface[]>([]);
-    const [ tipos, setTipos ] = useState<TipoInterface[]>([]);
  
     const { id } = useParams();
-
-    useEffect(() => {
-
-        api.get('/cidades')
-            .then(response => {
-                setCidades(response.data);
-            })
-
-        api.get('/tipos_sanguineos')
-            .then(response => {
-                setTipos(response.data);
-            })
-
-    },[])
 
     useEffect(() => {
 
@@ -95,17 +76,6 @@ const UpdatePessoa = () => {
                         }
                         >
 
-                        <option 
-                            value="0" 
-                            selected>Selecione:</option>
-
-                        {
-                            cidades.map(cidade => (
-                                <option
-                                    value={cidade.id}>{cidade.nome}</option>
-                            ))
-                        }
-
                     </select>
 
                 </div>
@@ -120,17 +90,6 @@ const UpdatePessoa = () => {
                             setTipoId(parseInt(e.target.value))
                         }
                         >
-
-                        <option 
-                            value="0" 
-                            selected>Selecione:</option>
-
-                        {
-                            tipos.map(tipo => (
-                                <option
-                                    value={tipo.id}>{tipo.tipo}</option>
-                            ))
-                        }
 
                     </select>
 
@@ -148,4 +107,4 @@ const UpdatePessoa = () => {
 
 }
 
-export default UpdatePessoa;
+export default UpdateUsuario;

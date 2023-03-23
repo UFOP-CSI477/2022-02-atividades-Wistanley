@@ -1,28 +1,16 @@
 import { useEffect, useState } from "react";
 import api from "../../services/api";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { CidadeInterface } from "../cidades/ListCidades";
 
 const UpdateLocal = () => {
     
     const navigate = useNavigate();
 
     const [nome, setNome] = useState('');
-    const [cidadeId, setCidadeId] = useState(0);
-
-    const [ cidades, setCidades ] = useState<CidadeInterface []>([]);    
- 
+    const [cidadeId, setCidadeId] = useState(0); 
     const { id } = useParams();
     
 
-    useEffect(() => {
-
-        api.get('/cidades')
-            .then(response => {
-                setCidades(response.data);
-            })
-
-    },[])
 
     useEffect(() => {
 
@@ -86,17 +74,6 @@ const UpdateLocal = () => {
                             setCidadeId(parseInt(e.target.value))
                         }
                         >
-
-                        <option 
-                            value="0" 
-                            selected>Selecione:</option>
-
-                        {
-                            cidades.map(cidade => (
-                                <option
-                                    value={cidade.id}>{cidade.nome}</option>
-                            ))
-                        }
 
                     </select>
 

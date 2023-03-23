@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom";
 import api from "../../services/api";
-import { LocalInterface } from "../locais/ListLocais";
-import { PessoaInterface } from "../pessoas/ListPessoas";
+import { LocalInterface } from "../servicos/ListLocais";
+import { PessoaInterface } from "../usuarios/ListUsuarios";
 import '../componentes.css'
 
 export interface DoacaoInterface {

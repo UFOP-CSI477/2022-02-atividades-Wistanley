@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import api from "../../services/api";
 import { Link, useNavigate } from "react-router-dom";
-import { TipoInterface } from "../tipos_sanguineos/ListTipos";
-import { CidadeInterface } from "../cidades/ListCidades";
 
 
 const CreatePessoa = () => {
@@ -12,23 +10,6 @@ const CreatePessoa = () => {
     const [nome, setNome] = useState('');
     const [cidadeId, setCidadeId] = useState(0);
     const [tipoId, setTipoId] = useState(0);
-
-    const [ cidades, setCidades ] = useState<CidadeInterface[]>([]);
-    const [ tipos, setTipos ] = useState<TipoInterface[]>([]);
-
-    useEffect(() => {
-
-        api.get('/cidades')
-            .then(response => {
-                setCidades(response.data);
-            })
-
-        api.get('/tipos_sanguineos')
-            .then(response => {
-                setTipos(response.data);
-            })
-
-    })
 
     const handleNewPessoa = async (event : React.FormEvent<HTMLFormElement>) => {
 
@@ -83,17 +64,6 @@ const CreatePessoa = () => {
                         }
                         >
 
-                        <option 
-                            value="0" 
-                            selected>Selecione:</option>
-
-                        {
-                            cidades.map(cidade => (
-                                <option
-                                    value={cidade.id}>{cidade.nome}</option>
-                            ))
-                        }
-
                     </select>
 
                 </div>
@@ -108,17 +78,6 @@ const CreatePessoa = () => {
                             setTipoId(parseInt(e.target.value))
                         }
                         >
-
-                        <option 
-                            value="0" 
-                            selected>Selecione:</option>
-
-                        {
-                            tipos.map(tipo => (
-                                <option
-                                    value={tipo.id}>{tipo.tipo}</option>
-                            ))
-                        }
 
                     </select>
 
