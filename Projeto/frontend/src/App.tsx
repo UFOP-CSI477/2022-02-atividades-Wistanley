@@ -19,11 +19,43 @@ function App() {
 
           <h3>Cotação #001</h3>
 
+          <p>Fabricação de peça em alumínio segundo especificações enviadas no arquivo em anexo</p>
+
+          <button className='btn'>Ver Detalhes</button>
+
         </div>
 
         <div className="cotacao">
 
-          <h3>Cotação #002</h3>
+          <h3>Cotação #001</h3>
+
+          <p>Fabricação de peça em alumínio segundo especificações enviadas no arquivo em anexo</p>
+
+          <button className='btn'>Ver Detalhes</button>
+
+        </div>
+
+
+
+      </div>
+
+      <div className='cotacoes'>
+
+        <div className="cotacao">
+
+          <h3>Cotação #001</h3>
+
+          <p>Fabricação de peça em alumínio segundo especificações enviadas no arquivo em anexo</p>
+
+          <button className='btn'>Ver Detalhes</button>
+
+        </div>        <div className="cotacao">
+
+          <h3>Cotação #001</h3>
+
+          <p>Fabricação de peça em alumínio segundo especificações enviadas no arquivo em anexo</p>
+
+          <button className='btn'>Ver Detalhes</button>
 
         </div>
 
@@ -31,35 +63,25 @@ function App() {
 
       <div className='cotacoes'>
 
-<div className="cotacao">
+        <div className="cotacao">
 
-  <h3>Cotação #003</h3>
+          <h3>Cotação #001</h3>
 
-</div>
+          <p>Fabricação de peça em alumínio segundo especificações enviadas no arquivo em anexo</p>
 
-<div className="cotacao">
+          <button className='btn'>Ver Detalhes</button>
 
-  <h3>Cotação #004</h3>
+        </div>        <div className="cotacao">
 
-</div>
+          <h3>Cotação #001</h3>
 
-</div>
+          <p>Fabricação de peça em alumínio segundo especificações enviadas no arquivo em anexo</p>
 
-<div className='cotacoes'>
+          <button className='btn'>Ver Detalhes</button>
 
-<div className="cotacao">
+        </div>
 
-  <h3>Cotação #005</h3>
-
-</div>
-
-<div className="cotacao">
-
-  <h3>Cotação #006</h3>
-
-</div>
-
-</div>
+      </div>
 
     </div>
 

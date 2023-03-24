@@ -14,9 +14,9 @@ export interface PessoaInterface {
 
 const ListPessoas = () => {
 
-    const [ pessoas, setPessoas ] = useState<PessoaInterface[]>([]);  
-    
-    useEffect(() =>{
+    const [pessoas, setPessoas] = useState<PessoaInterface[]>([]);
+
+    useEffect(() => {
 
         api.get('/pessoas')
             .then(response => {
@@ -29,24 +29,24 @@ const ListPessoas = () => {
     const handleDeletePessoa = async (id: number) => {
 
         // Validações
-        if ( !window.confirm( "Confirma exclusão da Pessoa?" ) ) {
+        if (!window.confirm("Confirma exclusão da Pessoa?")) {
             return
         }
 
         try {
-            await api.delete('/pessoas', 
-            {
-                data: {
-                    id
-                }
-            });
+            await api.delete('/pessoas',
+                {
+                    data: {
+                        id
+                    }
+                });
 
             alert("Pessoa excluída com sucesso!");
 
             // Atualizar?
-            setPessoas( pessoas.filter(pessoa => pessoa.id != id) );
+            setPessoas(pessoas.filter(pessoa => pessoa.id != id));
 
-        } catch(error) {
+        } catch (error) {
             alert("Erro ao excluir Pessoa!");
             console.error(error);
         }
@@ -54,52 +54,26 @@ const ListPessoas = () => {
     }
 
 
-    return(
+    return (
 
         <div className="fundo">
 
-            <h2>Pessoas</h2>
+            <h2>Serviços Oferecidos</h2>
+
+            <ul className="lista">
+                <li>Fabricação de Peças</li>
+                <li>Usinagem de Peças</li>
+                <li>Recuperação de Peças</li>
+                <li>Venda de Matéria Prima</li>
+                <li>Soldagem</li>
+                <li>Torneamento</li>
+            </ul>
+
+
 
             <div className="button">
                 <Link to="/">Voltar</Link>
             </div>
-            <div className="button">
-                <Link to="/pessoas/create">Cadastrar Pessoa</Link>
-            </div>
-
-            <table>
-
-                <thead>
-                    <tr className="titulo">
-                        <th>Id</th>
-                        <th>Nome</th>
-                        <th>Cidade</th>
-                        <th>Tipo Sanguineo</th>
-                        <th>Criado</th>
-                        <th>Alterado</th>
-                        <th>Atualizar</th>
-                        <th>Excluir</th>
-                    </tr>
-                </thead>
-                
-                <tbody>
-                    {pessoas.map(pessoa => (
-                        <tr key={pessoa.id}>
-                            <td>{pessoa.id}</td>
-                            <td>{pessoa.nome}</td>
-                            <td>{pessoa.created_at}</td>
-                            <td>{pessoa.updated_at}</td>
-                            <td><Link 
-                                to={`/pessoas/update/${pessoa.id}`}>Atualizar</Link></td>
-                            <td><button onClick={()=>{ 
-                                handleDeletePessoa(pessoa.id)
-                             }}>Excluir</button> </td>
-                        </tr>
-                    ))
-                    }
-                </tbody>
-
-            </table>
 
         </div>
 

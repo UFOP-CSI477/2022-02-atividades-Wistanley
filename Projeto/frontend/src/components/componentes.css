@@ -29,3 +29,9 @@
     background-color: rgba(255, 255, 255, 0.247);
     margin: 0px;
   }
+
+  .lista{
+    list-style: none;
+    font-size: 18px;
+    font-weight: 600;
+  }
